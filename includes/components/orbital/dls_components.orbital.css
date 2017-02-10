@@ -1,0 +1,111 @@
+.orbital-item {
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    text-align: center;
+    transition: top ease-out .25s;
+}
+
+.orbital-wrapper {
+    position: absolute;
+}
+
+.orbital {
+    position: fixed;
+    right: 10px;
+    top: 300px;
+    border-radius: 50%;
+}
+
+.orbital .center {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: steelblue;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40px, -40px);
+    border-radius: 50%;
+    z-index: 10;
+    text-align: center;
+    font-size: 30px;
+    line-height: 80px;
+    color: #fff;
+}
+
+.orbital:hover::before {
+    background-color: #333;
+}
+
+.orbital:hover .orbital-item {
+    top: 0px;
+}
+
+.orbital:hover {
+    -webkit-animation: infinite-spinning .25s ease-out; /* Safari 4+ */
+    -moz-animation:    infinite-spinning .25s ease-out; /* Fx 5+ */
+    -o-animation:      infinite-spinning .25s ease-out; /* Opera 12+ */
+    animation:         infinite-spinning .25s ease-out; /* IE 10+, Fx 29+ */
+}
+
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fa.icon.small {
+    width: 50px;
+    height: 50px;
+    display:inline-block;
+    font-size: 35px;
+    line-height: 50px;
+    background-color: steelblue;
+    color: #e1e1e1;
+    text-align: center;
+    vertical-align: top;
+    border-radius: 50%;
+    border: 5px solid #BAC1C2;
+    box-shadow: 7px 5px 15px #333;
+}
+
+.orbital.rotate {
+    -webkit-animation: infinite-spinning 10s linear infinite; /* Safari 4+ */
+    -moz-animation:    infinite-spinning 10s linear infinite; /* Fx 5+ */
+    -o-animation:      infinite-spinning 10s linear infinite; /* Opera 12+ */
+    animation:         infinite-spinning 10s linear infinite; /* IE 10+, Fx 29+ */
+}
+
+.orbital.rotate:hover {
+    -webkit-animation-play-state: paused; /* Safari 4.0 - 8.0 */
+    animation-play-state: paused;
+}
+
+.orbital.rotate .fa.icon.small {
+    -webkit-animation: reverse-infinite-spinning 10s linear infinite; /* Safari 4+ */
+    -moz-animation:    reverse-infinite-spinning 10s linear infinite; /* Fx 5+ */
+    -o-animation:      reverse-infinite-spinning 10s linear infinite; /* Opera 12+ */
+    animation:         reverse-infinite-spinning 10s linear infinite; /* IE 10+, Fx 29+ */
+}
+
+.orbital.rotate:hover .fa.icon.small {
+    -webkit-animation-play-state: paused; /* Safari 4.0 - 8.0 */
+    animation-play-state: paused;
+}
+
+@keyframes infinite-spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes reverse-infinite-spinning {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}

@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implements hook_uninstall().
+ */
+function dls_components_uninstall() {
+
+  // remove variables
+  $vars = array(
+  );
+  if (!empty($vars)) {
+    foreach ($vars as $var):
+      variable_del($var);
+    endforeach;
+  }
+}

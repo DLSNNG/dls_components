@@ -1,0 +1,23 @@
+.button-component {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    background-color: transparent;
+    cursor: inherit;
+    border: none;
+    font-size: inherit;
+    text-shadow: inherit;
+}
+
+#block-system-main .button-wrapper, #block-system-main .button-wrapper:hover, 
+#block-system-main .button-wrapper:active, #block-system-main .button-wrapper:focus,
+.button-wrapper, .button-wrapper:hover, .button-wrapper:active, .button-wrapper:focus  {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button-wrapper {
+    display: block;
+    overflow: hidden;
+}

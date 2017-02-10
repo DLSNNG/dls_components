@@ -1,0 +1,41 @@
+.badge {
+    padding: 0px 5px;
+    border-radius: 50%;
+    text-align: center;
+    float: right;
+}
+
+.bg-orange {
+    color: #fff;
+    background-color: #FC8712;
+}
+
+.bg-red {
+    color: #fff;
+    background-color: #FC1239;
+}
+
+.bg-green {
+    color: #fff;
+    background-color: #27C421;
+}
+
+.bg-blue {
+    color: #fff;
+    background-color: #4BC5FA;
+}
+
+.bg-purple {
+    color: #fff;
+    background-color: #BC5DDE;
+}
+
+.bg-teal {
+    color: #fff;
+    background-color: #37DE93;
+}
+
+.bg-gray {
+    color: #fff;
+    background-color: #727273;
+}

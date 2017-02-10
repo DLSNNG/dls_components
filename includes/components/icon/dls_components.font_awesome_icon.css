@@ -1,0 +1,53 @@
+/* removed - should be implemented in application
+.fa.icon {
+    display:inline-block;
+    font-size: 100px;
+    line-height: 150px;
+    background-color: steelblue;
+    color: #e1e1e1;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    vertical-align: top;
+    border-radius: 50%;
+    border: 7px solid #BAC1C2;
+    box-shadow: 7px 5px 15px #333;
+}
+*/
+
+.bg-blue, .fa.icon.bg-blue {
+    background-color: steelblue;
+}
+
+.bg-green, .fa.icon.bg-green {
+    background-color: green;
+}
+
+.bg-purple, .fa.icon.bg-purple {
+    background-color: purple;
+}
+
+.bg-orange, .fa.icon.bg-orange {
+    background-color: orange;
+}
+
+.bg-red, .fa.icon.bg-red {
+    background-color: red;
+}
+
+.bg-yellow, .fa.icon.bg-yellow {
+    background-color: yellow;
+    color: #BAC1C2;
+}
+
+.bg-light-green, .fa.icon.bg-light-green {
+    background-color: #65BF82;
+}
+
+.bg-light-blue, .fa.icon.bg-light-blue {
+    background-color: #65BFAA;
+}
+
+.bg-pink, .fa.icon.bg-pink {
+    background-color: pink;
+}

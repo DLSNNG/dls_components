@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @file DLS Components module.
+ */
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+// Hooks and preprocess functions
+//---------------------------------------------------------------------------------------------------------------------------
+
+/**
+ * Implementation of hook_permission().
+ * Set permissions for module
+ */
+function dls_components_permission() {
+  return array(
+      'view components' => array(
+          'title' => 'View DLS Components Pages',
+          'description' => t('Allow user to view DLS Components Test Pages.')
+      ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ *
+ * @return array
+ */
+function dls_components_menu() {
+  $items = array();
+  $path = drupal_get_path('module', 'dls_components') . '/includes/views';
+
+  $items['components'] = array(
+      'title' => 'DLS Components',
+      'page callback' => 'view_dls_components_home',
+      'access arguments' => array('view components'),
+      'file path' => $path,
+      'file' => 'dls_components.home.inc',
+  );
+  
+  return $items;
+}

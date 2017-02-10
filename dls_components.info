@@ -1,0 +1,18 @@
+name = DLS Components
+description = DLS Components Library
+core = 7.x
+package = "DLS"
+version = VERSION
+; Required by simpletest
+testing_api = 2.x
+
+;configure = admin/config/dls/components
+
+; Files
+files[] = dls_components.module
+files[] = dls_components.test
+
+; Dependencies
+;dependencies[] = dls
+
+

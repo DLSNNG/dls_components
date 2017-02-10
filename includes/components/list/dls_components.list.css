@@ -1,0 +1,100 @@
+.list-group {
+  margin-bottom: 20px;
+  margin-left: 0px;
+  padding-left: 0;
+  float: left;
+  width: 100%;
+}
+
+
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.list-group-item:first-child {
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.list-group-item:last-child {
+  margin-bottom: 0;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.pagination {
+  position: relative;
+  display: inline-block;
+  padding: 10px 15px;
+  margin-left: -1px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.pagination:first-child {
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.pagination:last-child {
+  margin-right: 0;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.pagination.active {
+  background-color: steelblue;
+}
+
+.pagination.active a.active {
+  color: #fff;
+}
+
+a.list-group-item,
+button.list-group-item {
+  color: #555;
+}
+
+a.list-group-item .list-group-item-heading,
+button.list-group-item .list-group-item-heading {
+  color: #333;
+}
+
+a.list-group-item:hover, a.list-group-item:focus,
+button.list-group-item:hover,
+button.list-group-item:focus {
+  text-decoration: none;
+  color: #555;
+  background-color: #f5f5f5;
+}
+
+button.list-group-item {
+  width: 100%;
+  text-align: left;
+}
+
+.list-group-item a, .list-group-item a:focus, .list-group-item a:link, .list-group-item a:visited, .list-group-item a:active {
+  color: #333;
+}
+
+.list-group-item a:hover {
+  color: steelblue;
+}
+
+.list-group-item .hl7-header {
+  font-weight: bold;
+  color: #BD3939;
+}
+
+.list-group-item.description-available, .list-group-item.description-not-available {
+  border-color: #B8BABA;
+}
+
+.list-group-item.description-available {
+  background-color: #e1e1e1;
+}

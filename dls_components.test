@@ -1,0 +1,95 @@
+<?php
+
+  class PropTypeTestCase extends DrupalUnitTestCase {
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function getInfo() {
+      return array(
+        'name' => 'Prop Type Test Case',
+        'description' => 'Test various methods of PropTypes Object.',
+        'group' => 'PropTypes',
+      );
+    }
+
+    public function setUp() {
+      module_load_include('inc', 'dls_components', 'includes/library/propTypes/dls_components.propTypes');
+      parent::setUp();
+    }
+
+    public function testPropTypeStoresType() {
+      $message = 'It should set its "types" property when constructed';
+      $types = array('string');
+      $propType = new propType(array('string'));
+      
+      $this->assertEqual($propType->types, $types, $message);
+    }
+    
+    public function testPropTypeActsAsFactory() {
+      $message = 'It should return a new PropType when make() method is called';
+      $propType = propType::make(array('string'));
+      $this->assertEqual(get_class($propType), 'propType', $message, 'PropTypes');
+      
+      $message = 'PropTypes created by the make() function should not be identical';
+      $prop1 = propType::make(array('string'));
+      $prop2 = propType::make(array('string'));
+      $this->assertNotIdentical($prop1, $prop2, $message, 'PropTypes');
+      
+      $message = 'The String() method should produce a propType that includes "string" in its types';
+      $propType = propType::String();
+      $types = array('string');
+      $this->assertEqual($propType->types, $types, $message, 'PropTypes');
+      
+      $message = 'The Number() method should produce a propType that includes "integer"
+                  and "double" in its types';
+      $propType = propType::Number();
+      $types = array('integer', 'double');
+      $this->assertEqual($propType->types, $types, $message, 'PropTypes');
+      
+      $message = 'The Collection() method should produce a propType that includes "array" in its types';
+      $propType = propType::Collection();
+      $types = array('array');
+      $this->assertEqual($propType->types, $types, $message, 'PropTypes');
+      
+      $message = 'The ObjectOfType() method should produce a propType that includes the
+                  specified object type in its types';
+      $propType = propType::ObjectOfType('testing');
+      $types = array('testing');
+      $this->assertEqual($propType->types, $types, $message, 'PropTypes');
+    }
+    
+    public function testPropTypeGetTypes() {
+      $message = 'It should return a comma separated list of types when the 
+                  getTypes() method is called';
+      $propType = propType::Number();
+      $typesString = 'integer, double';
+      $this->assertEqual($propType->getTypes(), $typesString, $message, 'PropTypes');
+    }
+    
+    public function testPropTypeValidation() {
+      $message = 'It should correctly validate a string';
+      $propType = propType::String();
+      $string = 'This is a string';
+      $valid = $propType->validate($string);
+      $this->assertTrue($valid, $message, 'validate()');
+      
+      $message = 'It should correctly validate a number';
+      $propType = propType::Number();
+      $number = 42;
+      $valid = $propType->validate($number);
+      $this->assertTrue($valid, $message, 'validate()');
+      
+      $message = 'It should correctly validate an array';
+      $propType = propType::Collection();
+      $array = array('this', 'is', 'an', 'array');
+      $valid = $propType->validate($array);
+      $this->assertTrue($valid, $message, 'validate()');
+      
+      $message = 'It should correctly validate an object';
+      $propType = propType::ObjectOfType('DateTime');
+      $object = new DateTime();
+      $valid = $propType->validate($object);
+      $this->assertTrue($valid, $message, 'validate()');
+    }
+  }

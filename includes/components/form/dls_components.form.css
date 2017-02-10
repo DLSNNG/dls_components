@@ -1,0 +1,11 @@
+input.form-error, select.form-error, textarea.form-error {
+    background-color: #F24033;
+    color: #fff;
+    border-color: #F24033;
+    box-shadow: none;
+}
+
+.form-error::-webkit-calendar-picker-indicator:hover {
+    color: #C2C2C2;
+    background-color: inherit;
+}
