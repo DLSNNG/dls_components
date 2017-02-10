@@ -161,7 +161,7 @@
     );
     
     // TODO: use MVC + Component pattern to build alternate inquiry page
-    $block = dpage::make('ListView', 'TestController');
+    //$block = dpage::make('ListView', 'TestController');
     
     return $block;
   }
